@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Api } from '@/lib/api'
 
 
-
+const ApiKey = '19c32cdd77c2a8594727be2bfddab3d7'
 const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJmZGRhYjNkNyIsInN1YiI6IjY0YWMyMjJjM2UyZWM4MDBhZjdlODQ5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HeT_hlYc1SEhCP9osB4E-iRjXK9c3ZV0aKh4I1y5mxE'
 
 interface Movie {
@@ -16,13 +16,11 @@ interface Movie {
 
 export default async function Home() {
     
-    const response = await Api.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`, {
+    const response = await Api.get(`/trending/all/day?api_key=19c32cdd77c2a8594727be2bfddab3d7`, {
         headers: {
             Authorization: `Bearer ${Token}`
         }
     })
-
-
 
     const movies: Movie[] = response.data.results
 
@@ -48,7 +46,7 @@ export default async function Home() {
                             key={movie.id}
                             className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
                             <li>
-                                <a href={`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${process.env.API_KEY}`} className="block overflow-hidden group">
+                                <a href={`/${movie.id}`} className="block overflow-hidden group">
                                     <h3
                                         className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4"
                                     >
