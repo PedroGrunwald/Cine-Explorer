@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import HeaderDetails from '../components/HeaderDetails'
+import Footer from '../../components/Footer'
+import HeaderDetails from '../../components/HeaderDetails'
 import { Api } from '@/lib/api'
 
 
