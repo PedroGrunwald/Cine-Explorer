@@ -3,8 +3,9 @@ import HeaderDetails from '../../components/HeaderDetails'
 import { Api } from '@/lib/api'
 
 
-const ApiToken = '19c32cdd77c2a8594727be2bfddab3d7'
+
 const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJmZGRhYjNkNyIsInN1YiI6IjY0YWMyMjJjM2UyZWM4MDBhZjdlODQ5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HeT_hlYc1SEhCP9osB4E-iRjXK9c3ZV0aKh4I1y5mxE'
+
 type MovieId = {
   params: {
     id: String
@@ -15,14 +16,15 @@ interface MovieDetails {
   title: string;
   overview: string;
   release_date: string;
-  adult: Boolean
+  adult: Boolean;
+ 
   // titulo  resumo, duração, classificação, gênero e imagem do filme.
 }
 
 export default async function MovieDetail({ params }: MovieId) {
 
   const { id } = params
-  const response = await Api.get(`movie/${id}/?api_key=19c32cdd77c2a8594727be2bfddab3d7`, {
+  const response = await Api.get(`/movie/${id}?api_key=${process.env.API_KEY}`, {
     headers: {
       Authorization: `Bearer ${Token}`
     }
@@ -38,7 +40,7 @@ export default async function MovieDetail({ params }: MovieId) {
         <p>resumo do filme</p>
         <p>duração do filme</p>
         <p>classificação do filme</p>
-        <p>genero do filme</p>
+        <p>generos</p>
         <p>Imagem do filme</p>
       </div>
 
