@@ -1,7 +1,7 @@
 import React from 'react'
-import HeaderDetails from '../../components/HeaderDetails'
 import { Api } from '@/lib/api'
 import Image from 'next/image'
+import Header from '@/components/Header'
 
 
 
@@ -37,7 +37,7 @@ export default async function MovieDetail({ params }: MovieId) {
 
   return (
     <>
-      <HeaderDetails />
+      <Header />
 
       <div>
         <h1>{movieDetail.title}</h1>
