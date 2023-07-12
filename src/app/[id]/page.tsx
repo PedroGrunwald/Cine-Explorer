@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderDetails from '../../components/HeaderDetails'
 import { Api } from '@/lib/api'
+import Image from 'next/image'
 
 
 
@@ -9,16 +10,19 @@ const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJm
 type MovieId = {
   params: {
     id: String
+
   }
 }
 interface MovieDetails {
-  id: number;
-  title: string;
-  overview: string;
-  release_date: string;
+  id: Number;
+  title: String;
+  overview: String;
+  release_date: String;
   adult: Boolean;
- 
-  // titulo  resumo, duração, classificação, gênero e imagem do filme.
+  poster_path: String;
+  genres: String[];
+  runtime: String;
+
 }
 
 export default async function MovieDetail({ params }: MovieId) {
@@ -37,14 +41,20 @@ export default async function MovieDetail({ params }: MovieId) {
 
       <div>
         <h1>{movieDetail.title}</h1>
-        <p>resumo do filme</p>
-        <p>duração do filme</p>
-        <p>classificação do filme</p>
-        <p>generos</p>
-        <p>Imagem do filme</p>
+        <p>{movieDetail.overview}</p>
+        <p>{movieDetail.runtime} min</p>
+        <p>{movieDetail.adult ? "+18" : "livre"}</p>
+        {movieDetail.genres.map((genre : any) =>(<div key={genre.id}>{genre.name}</div>))}
+        <Image
+          className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+          src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`}
+          width={330}
+          height={450}
+          alt="movie image"
+        />
       </div>
 
-
+     
 
     </>
   )
