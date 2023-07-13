@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Api } from '@/lib/api'
 
 const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJmZGRhYjNkNyIsInN1YiI6IjY0YWMyMjJjM2UyZWM4MDBhZjdlODQ5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HeT_hlYc1SEhCP9osB4E-iRjXK9c3ZV0aKh4I1y5mxE'
-
+const ApiKey = '19c32cdd77c2a8594727be2bfddab3d7'
 interface Movie {
     title: string
     id: number
@@ -14,7 +14,7 @@ interface Movie {
 
 export default async function Home() {
 
-    const response = await Api.get(`/trending/all/day?api_key=${process.env.API_KEY}`, {
+    const response = await Api.get(`/trending/all/day?api_key=${ApiKey}`, {
         headers: {
             Authorization: `Bearer ${Token}`
         }

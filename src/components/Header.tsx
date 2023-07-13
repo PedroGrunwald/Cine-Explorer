@@ -1,34 +1,6 @@
-'use client'
-import { Api } from '@/lib/api'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJmZGRhYjNkNyIsInN1YiI6IjY0YWMyMjJjM2UyZWM4MDBhZjdlODQ5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HeT_hlYc1SEhCP9osB4E-iRjXK9c3ZV0aKh4I1y5mxE'
-
-
-export default  function Header({ getSearchResults }: any) {
-  const [inputValue, setInputValue] = useState()
-  const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState("");
-
-  // useEffect(() => {
-  //   Api.get(`/discover/movie?api_key=${process.env.API_KEY}`), {
-  //     headers: {
-  //       Authorization: `Bearer ${Token}`
-  //     },
-     
-  //   }
-  // },[])
-
-
-// function busca(a) {
-//   if (finds === "") {
-//       return a
-//   } else {
-//       return a.nomeFilme.toLowerCase().includes(finds.toLowerCase()) 
-//   }
-
-{/* <button onClick={() => getFilmes()}>Buscar</button> */}
-// }
+export default function Header() {
 
   return (
     <header className="bg-gray-50">
