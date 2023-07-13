@@ -51,6 +51,10 @@ export default async function Home() {
                                         {movie.title}
                                     </h3>
                                 </a>
+                                <p className="mt-2 flex flex-col">
+                                    <span className=""> {movie.release_date} </span>
+                                    <span className="tracking-wider text-gray-900">Classificação: {movie.adult ? "+18" : "livre"}</span>
+                                </p>
                                 <Image
                                     className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -59,10 +63,6 @@ export default async function Home() {
                                     alt="movie image"
                                 />
                                 <div className="relative pt-3 bg-white">
-                                    <p className="mt-2">
-                                        <span className="sr-only"> {movie.release_date} </span>
-                                        <span className="tracking-wider text-gray-900">Classificação: {movie.adult ? "+18" : "livre"}</span>
-                                    </p>
                                 </div>
                             </li>
                         </ul>
