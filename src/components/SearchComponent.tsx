@@ -36,7 +36,6 @@ const SearchComponent: React.FC = () => {
             console.error('Erro na busca:', error);
         }
     };
-
     return (
         <div>
             <input
@@ -70,7 +69,6 @@ const SearchComponent: React.FC = () => {
                     <>
                         <li key={results.id}>{results.title}</li>
                         <Image
-
                             src={`https://image.tmdb.org/t/p/w500${results.poster_path}`}
                             width={330}
                             height={450}
@@ -82,5 +80,4 @@ const SearchComponent: React.FC = () => {
         </div>
     );
 };
-
 export default SearchComponent;

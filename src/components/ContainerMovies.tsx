@@ -26,7 +26,7 @@ export default async function Home() {
     if (movies.length === 0) {
         return "LOADING"
     }
-
+    
     return (
         <>
             <section>
@@ -42,8 +42,6 @@ export default async function Home() {
                 </div>
                 <div className='flex justify-between flex-wrap gap-10'>
                     {movies.map((movie) => (
-                         //porque tem 2 endpoint?  sao differentes, um usa query pra ter que buscar o filme pesquisado e esse daqui é dos filmes populares
-                         //locurau isso ausdhauhdsa //the moviedb discorda kkkk, eu nao entendi o motivo tbm, pq na minha logica pdoeria usar esse endpoint pra buscar os filmes populares somente o filme já tem que vir tudo em um endpoint só quer ver a doc dele? mostr aai
                         <div
                             key={movie.id}
                             >
