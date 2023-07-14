@@ -2,13 +2,13 @@
 import { Api } from '@/lib/api'
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation'
-
+import Image from 'next/image'
 
 const Token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWMzMmNkZDc3YzJhODU5NDcyN2JlMmJmZGRhYjNkNyIsInN1YiI6IjY0YWMyMjJjM2UyZWM4MDBhZjdlODQ5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HeT_hlYc1SEhCP9osB4E-iRjXK9c3ZV0aKh4I1y5mxE'
 interface Movie {
     id: number;
     title: string;
-
+    poster_path: String;
 }
 
 const SearchComponent: React.FC = () => {
@@ -30,16 +30,12 @@ const SearchComponent: React.FC = () => {
                     Authorization: `Bearer ${Token}`
                 }
             });
-            console.log(search)
-            console.log(searchTerm)
+
             setSearchResults(response.data.results);
         } catch (error) {
             console.error('Erro na busca:', error);
         }
-
     };
-
-
 
     return (
         <div>
@@ -49,10 +45,19 @@ const SearchComponent: React.FC = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button onClick={() => handleSearch()}>Buscar</button>
-            {console.log(searchResults)}
+
             <ul>
                 {searchResults.map((results) => (
-                    <li key={results.id}>{results.title}</li>
+                    <>
+                        <li key={results.id}>{results.title}</li>
+                        <Image
+                            className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                            src={`https://image.tmdb.org/t/p/w500${results.poster_path}`}
+                            width={330}
+                            height={450}
+                            alt="movie image"
+                        />
+                    </>
                 ))}
             </ul>
         </div>
