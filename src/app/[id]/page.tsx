@@ -38,10 +38,9 @@ export default async function MovieDetail({ params }: MovieId) {
   return (
     <>
       <Header />
-
-      <div>
-        <h1>{movieDetail.title}</h1>
-        <p>{movieDetail.overview}</p>
+      <div className='flex  justify-center items-center flex-col flex-wrap gap-10'>
+        <h1 className="text-center text-lg text-gray-700 group-hover:underline">{movieDetail.title}</h1>
+        <p className="tracking-wider">{movieDetail.overview}</p>
         <p>{movieDetail.runtime} min</p>
         <p>{movieDetail.adult ? "+18" : "livre"}</p>
         {movieDetail.genres.map((genre : any) =>(<div key={genre.id}>{genre.name}</div>))}
