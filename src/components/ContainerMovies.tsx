@@ -10,6 +10,7 @@ interface Movie {
     release_date: string
     poster_path: string
     adult: Boolean
+    name: string
 }
 
 export default async function Home() {
@@ -25,52 +26,51 @@ export default async function Home() {
     if (movies.length === 0) {
         return "LOADING"
     }
+
     return (
-        <section>
-            <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
-                <header className="text-center">
-                    <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
-                        Filmes em destaque
-                    </h2>
-                    <p className="max-w-md mx-auto mt-4 text-gray-500">
-                        Não perca a oportunidade de assistir os filmes mais favoritos do cinema para a tela de sua casa, os mais premiados e bem avaliados diretamente no conforto de sua casa!
-                    </p>
-                </header>
-            </div>
-            <div>
-                <ul>
+        <>
+            <section>
+                <div className="px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+                    <header className="text-center">
+                        <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+                            Filmes em destaque
+                        </h2>
+                        <p className="max-w-md mx-auto mt-4 text-gray-500">
+                            Não perca a oportunidade de assistir os filmes mais favoritos do cinema para a tela de sua casa, os mais premiados e bem avaliados diretamente no conforto de sua casa!
+                        </p>
+                    </header>
+                </div>
+                <div className='flex justify-between flex-wrap gap-10'>
                     {movies.map((movie) => (
-                        <ul
+                         //porque tem 2 endpoint?  sao differentes, um usa query pra ter que buscar o filme pesquisado e esse daqui é dos filmes populares
+                         //locurau isso ausdhauhdsa //the moviedb discorda kkkk, eu nao entendi o motivo tbm, pq na minha logica pdoeria usar esse endpoint pra buscar os filmes populares somente o filme já tem que vir tudo em um endpoint só quer ver a doc dele? mostr aai
+                        <div
                             key={movie.id}
-                            className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
-                            <li>
-                                <a href={`/${movie.id}`} className="block overflow-hidden group">
+                            >
+                            <div className='w-100'>
+                                <a href={`/${movie.id}`} className="overflow-hidden group">
                                     <h3
-                                        className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4"
-                                    >
-                                        {movie.title}
+                                        className="text-center text-lg text-gray-700 group-hover:underline"
+                                    > 
+                                        {movie.title}{movie.name}
                                     </h3>
                                 </a>
-                                <p className="mt-2 flex flex-col">
-                                    <span className=""> {movie.release_date} </span>
+                                <p className="mt-2 text-center">
+                                    <span> {movie.release_date} </span>
                                     <span className="tracking-wider text-gray-900">Classificação: {movie.adult ? "+18" : "livre"}</span>
                                 </p>
                                 <Image
-                                    className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                    width={330}
-                                    height={450}
+                                    src={`https://image.tmdb.org/t/p/w400${movie.poster_path}`}
+                                    width={450}
+                                    height={200}
                                     alt="movie image"
                                 />
-                                <div className="relative pt-3 bg-white">
-                                </div>
-                            </li>
-                        </ul>
-                    )
-                    )
-                    }
-                </ul>
-            </div>
-        </section>
+                            </div>
+                        </div> 
+                    ))}
+                </div>
+            </section>
+        </>
     )
 }
+

@@ -70,14 +70,14 @@ const SearchComponent: React.FC = () => {
                     <>
                         <li key={results.id}>{results.title}</li>
                         <Image
-                            className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+
                             src={`https://image.tmdb.org/t/p/w500${results.poster_path}`}
                             width={330}
                             height={450}
                             alt="movie image"
                         />
                     </>
-                ))}
+                ))} 
             </ul>
         </div>
     );

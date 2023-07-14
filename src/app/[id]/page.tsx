@@ -46,7 +46,7 @@ export default async function MovieDetail({ params }: MovieId) {
         <p>{movieDetail.adult ? "+18" : "livre"}</p>
         {movieDetail.genres.map((genre : any) =>(<div key={genre.id}>{genre.name}</div>))}
         <Image
-          className="h-[450px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+          className=" object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
           src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`}
           width={330}
           height={450}
