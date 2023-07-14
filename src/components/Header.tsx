@@ -15,9 +15,9 @@ export default function Header() {
           </div>
         </div>
         <div className="mt-8">
-          <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <a href="/" className="text-2xl font-bold text-gray-900 sm:text-3xl">
             Cine Explorer
-          </h1>
+          </a>
           <p className="mt-1.5 text-sm text-gray-500">
             O seu melhor explorador de filmes, divirta-se!!
           </p>

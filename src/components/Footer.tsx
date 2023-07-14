@@ -55,9 +55,9 @@ function Footer() {
         </svg>
       </div>
 
-      <p className="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
+      <a href="/" className="mt-4 text-center text-sm text-gray-700 lg:mt-0 lg:text-right hover:bg-slate-500">
         Pedro Grunwald Cine Explorer Copyright &copy; 2023. All rights reserved.
-      </p>
+      </a>
     </div>
   </div>
 </footer>
