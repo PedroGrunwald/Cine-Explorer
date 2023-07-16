@@ -1,39 +1,33 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-Passo a Passo : 
+Cine-Explorer
+Descrição
+Bem-vindo ao projeto Cine-Explorer! Este repositório contém um aplicativo incrível baseado em uma API pública. Leia as instruções a seguir para configurar e executar o projeto no seu ambiente local.
 
-1 - Certifique-se que possue os seguintes items instalados em sua maquina 
-Node.js ( versão mais atualizada) 
-Git 
+Requisitos
+Antes de começar, certifique-se de ter os seguintes itens instalados na sua máquina:
 
-2- Clone o repositório do projeto para o seu computador usando o seguinte comando: git clone https://github.com/seu-usuario/nome-do-projeto.git
+Node.js (versão mais atualizada)
+Git
 
-3- Navegue para o diretório do projeto, com o comando "cd nome-do-projeto" em seu terminal.
+Instalação
+Clone o repositório do projeto para o seu computador executando o seguinte comando no seu terminal:
+git clone https://github.com/seu-usuario/nome-do-projeto.git
 
-4- instale as dependencias do projeto com o comando yarn ou yarn install.
+Navegue até o diretório do projeto com o seguinte comando:
+cd nome-do-projeto
 
-5- Rode o comando yarn start
+Instale as dependências do projeto executando o seguinte comando:
+yarn install
 
+Executando o Projeto
+Após concluir a instalação, você está pronto para executar o projeto no seu ambiente local. Siga as etapas abaixo:
 
+No seu terminal, execute o seguinte comando para iniciar o servidor local:
+yarn start
+Abra um navegador da web e acesse a seguinte URL: http://localhost:3000 (ou outra porta especificada, se for diferente).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Agora você verá o projeto em execução no seu navegador!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Muito obrigado pelo seu tempo! espero um feedback( se possivel)  para eu poder melhorar cada vez mais como um desenvolvedor, tenha um excelente dia e uma boa sorte em sua missão!!!
