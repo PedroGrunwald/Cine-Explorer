@@ -1,16 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+Passo a Passo : 
 
-First, run the development server:
+1 - Certifique-se que possue os seguintes items instalados em sua maquina 
+Node.js ( versão mais atualizada) 
+Git 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2- Clone o repositório do projeto para o seu computador usando o seguinte comando: git clone https://github.com/seu-usuario/nome-do-projeto.git
+
+3- Navegue para o diretório do projeto, com o comando "cd nome-do-projeto" em seu terminal.
+
+4- instale as dependencias do projeto com o comando yarn ou yarn install.
+
+5- Rode o comando yarn start
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
